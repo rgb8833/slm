@@ -12,6 +12,18 @@ void TextGenerator::seed(unsigned int s) {
 }
 
 std::string TextGenerator::generate(std::size_t length) {
-    //need to implement text generation based on the model
-    return "[GENERATOR NOT IMPLEMENTED YET]";
+    std::string result;
+    std::size_t k = model_.k();
+
+    if (k == 0) {
+        return result;
+    }
+
+    //pick a starting word from the model
+    std::string word = model_.chooseStartWord(rng_);
+
+    if (word.empty()) {
+        return result; //no valid start word
+    }
+    return result;
 }
