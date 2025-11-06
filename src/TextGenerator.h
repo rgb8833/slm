@@ -4,18 +4,17 @@
 #include "LanguageModel.h"
 #include <string>
 #include <random>
+#include <stdexcept>
 
 class TextGenerator {
 public:
-
-    TextGenerator(const LanguageModel &model);
-
+    TextGenerator(const LanguageModel& model);
     void seed(unsigned int s);
-
     std::string generate(std::size_t length);
 
 private:
-    const LanguageModel &model_;  
+    //the model reference is const because the generator only reads data
+    const LanguageModel& model_; 
     std::mt19937 rng_; //random number generator
 };
 
