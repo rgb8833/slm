@@ -1,0 +1,5 @@
+# Ignore compiled binaries and temporary files
+slm
+*.o
+*.DS_Store
+src/*.o
