@@ -1,2 +1,3 @@
-# slm
- small language model
+# Small Language Model (SLM) - Lab Report
+
+This project implements a Small Language Model (SLM) in C++, basically an "Artificial Idiot" that doesn't understand language but is great at statistics. The core idea is simple: the model scans an input text file and learns which character has the highest probability of appearing after any given sequence of $k$ preceding characters (a $k$-gram model). We structured the code cleanly using two separate C++ classes: **`LanguageModel`** (which handles all the heavy lifting for training and storing frequencies in nested `std::map`s) and **`TextGenerator`** (which uses random sampling methods to generate the text character by character via a sliding window). To run the application, it's super straightforward: just run `make` (which is set up to find the sources in `src/`), and then execute `./slm` with three arguments: the word length $k$, the training file, and how many characters you want it to output. For example: `./slm 4 moby_dick.txt 150`.
